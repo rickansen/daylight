@@ -38,26 +38,42 @@
           </nav>
         </header>
 
-        <h2>Add Priorities:</h2>
-
-        <form action="/addPriority" method="POST">
-          <input type="text" placeholder="Title" name="title" />
-          <textarea type="text" placeholder="Body" name="body"></textarea>
-          <input type="submit" />
-        </form>
-
-        <% for(let i=0; i < info.length; i++) {%>
-
-        <section class="tasks">
-          <h3><%= info[i].title %></h3>
-          <h4><%= info[i].body %></h4>
-          <span><%= info[i].date %></span>
-          <div>
-            <button class="update">Update</button>
-            <button class="delete">Delete</button>
+        <section class="wholeContainer">
+          <div class="addPrio">
+            <h2>Add Priorities</h2>
+            <!-- <i class="fa fa-plus-circle" aria-hidden="true"></i> -->
           </div>
+
+         <section class="popUpCont">
+           <form action="/addPriority" method="POST" class="popUpForm">
+            <input type="text" placeholder="Title" name="title" />
+            <textarea type="text" placeholder="Body" name="body"></textarea>
+            <button type="submit" class="submit">Add Priority</button>
+          </form>
+         </section>
+         
+
+         <section class="cardsCont">
+          <h2 class="top">Top Priorities</h2>
+
+          <% for(let i=0; i < info.length; i++) {%>
+
+          <section class="tasks">
+            <h3><%= info[i].title %></h3>
+            <h4><%= info[i].body %></h4>
+            <div class="date"><i class="fa fa-calendar" aria-hidden="true"></i><%= info[i].date
+              %></div>
+              
+            </div>
+            <div>
+              <button class="update">Update</button>
+              <button class="delete">Delete</button>
+            </div>
+          </section>
+          <% } %>
+         </section>
+          
         </section>
-        <% } %>
 
         <script src="js/main.js"></script>
       </body>
