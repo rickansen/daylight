@@ -72,6 +72,10 @@ BODY
     padding: 0 24px;
 }
 
+.logo {
+    font-size: 1.7rem;
+}
+
 .addPrio {
     display: flex;
     font-size: 1.5rem;
@@ -135,8 +139,9 @@ textarea {
 }
 
 .tasks {
-    margin: 8px 0 ;
     padding: 0 8px;
+    outline: 1px solid black;
+    border-radius: 8px;
 }
 
 .tasks > * {
@@ -149,13 +154,16 @@ textarea {
 }
 
 .prioBody {
-text-align: justify;
+    text-align: justify;
+    line-height: 1.2rem;
 }
 
 .date {
     padding: 8px;
     width: fit-content;
     font-size: 0.7rem;
+    background-color: rgb(204, 204, 204);
+    border-radius: 4px;
 }
 
 .fa-calendar {
@@ -164,6 +172,10 @@ text-align: justify;
 
 .tasks button {
     padding: 4px;
+}
+
+.delete {
+    margin: 0 8px;
 }
 
 
