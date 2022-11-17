@@ -34,6 +34,8 @@ async function update() {
   const title = this.parentNode.parentNode.childNodes[1].innerText;
   const body = this.parentNode.parentNode.childNodes[3].innerText;
   const date = this.parentNode.parentNode.childNodes[5].innerText;
+
+  console.log(title, body, date);
   try {
     const response = await fetch('updatePriority', {
       method: 'put',

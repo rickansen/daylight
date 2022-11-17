@@ -10,7 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/colorBlock.css" />
+    <!-- <link rel="stylesheet" href="css/colorBlock.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -41,7 +41,6 @@
         <section class="wholeContainer">
           <div class="addPrio">
             <h2>Add Priorities</h2>
-            <!-- <i class="fa fa-plus-circle" aria-hidden="true"></i> -->
           </div>
 
          <section class="popUpCont">
@@ -54,13 +53,13 @@
          
 
          <section class="cardsCont">
-          <h2 class="top">Top Priorities</h2>
+          <h2 class="top">Priority List</h2>
 
           <% for(let i=0; i < info.length; i++) {%>
 
           <section class="tasks">
-            <h3><%= info[i].title %></h3>
-            <h4><%= info[i].body %></h4>
+            <h3 class="prioTitle"><%= info[i].title %></h3>
+            <h4 class="prioBody"><%= info[i].body %></h4>
             <div class="date"><i class="fa fa-calendar" aria-hidden="true"></i><%= info[i].date
               %></div>
               

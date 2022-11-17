@@ -4,6 +4,25 @@ const MongoClient = require('mongodb').MongoClient;
 const PORT = 2121;
 require('dotenv').config();
 
+const Months = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
+];
+const date = new Date();
+const month = date.getMonth();
+const day = date.getDate();
+const year = date.getUTCFullYear();
+
 let db,
   dbConnectionStr = process.env.DB_STRING,
   dbName = 'daylight';
@@ -31,25 +50,6 @@ app.get('/', (request, response) => {
 });
 
 app.post('/addPriority', (request, response) => {
-  const Months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-  const date = new Date();
-  const month = date.getMonth();
-  const day = date.getDay();
-  const year = date.getUTCFullYear();
-
   db.collection('tasks')
     .insertOne({
       title: request.body.title,
@@ -64,25 +64,6 @@ app.post('/addPriority', (request, response) => {
 });
 
 app.put('/updatePriority', (request, response) => {
-  const Months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-  const date = new Date();
-  const month = date.getMonth();
-  const day = date.getDay();
-  const year = date.getUTCFullYear();
-
   db.collection('tasks')
     .updateOne(
       {
